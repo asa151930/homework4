@@ -126,16 +126,16 @@ function setTime() {
             if (timeLeft === 0) {
                 // Calls function to create and append image
                 timeEl.textContent = "Time's Up, Game Over";
-
                 // Stops execution of action at set interval
                 clearInterval(timerInterval);
-                sendMessage();
             }
-
         }, 1000);
     }
-}
 
+// Start Quiz
+function start_Quiz (){
+    
+}
 
 
 
