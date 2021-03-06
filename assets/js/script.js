@@ -4,6 +4,7 @@ var timeEl = document.getElementById("time-left");
 var startQuiz = document.getElementById("begin-quiz");
 var buttonChoice = document.getElementById("options");
 
+
 // list out question/choices
 //Array Questions
 var questionArr = [
@@ -133,8 +134,8 @@ function setTime() {
     }
 
 // Start Quiz
-function start_Quiz (){
-    
+function startQuiz (){
+
 }
 
 
