@@ -5,7 +5,7 @@ var startQuiz = document.getElementById("begin-quiz");
 var buttonChoice = document.getElementById("options");
 
 // list out question/choices
-//Array
+//Array Questions
 var questionArr = [
     {
         question: "1. Who created JavaScript?",
@@ -115,7 +115,26 @@ var questionArr = [
     }
 ];
 
+// Timer
+function setTime() {
+    var timeLeft = 75;
+        // Sets interval in variable
+        var timerInterval = setInterval(function () {
+            timeLeft--;
+            timeEl.textContent = timeLeft;
 
+            if (timeLeft === 0) {
+                // Calls function to create and append image
+                timeEl.textContent = "Time's Up, Game Over";
+
+                // Stops execution of action at set interval
+                clearInterval(timerInterval);
+                sendMessage();
+            }
+
+        }, 1000);
+    }
+}
 
 
 
