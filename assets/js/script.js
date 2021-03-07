@@ -109,7 +109,7 @@ function randomQuest() {
     }
 }
 
-
+// checks answers, shows alert box when the user enters the choice to check whether it is correct or wrong
 function handleAnswer (event) {
     event.preventDefault();
     console.log(questionArr[questionCount].correctAnswer, event.target.value)
@@ -121,6 +121,7 @@ function handleAnswer (event) {
     questionCount++;
     randomQuest();
 }
+// buttons click event
 buttonChoice1.addEventListener('click', handleAnswer);
 buttonChoice2.addEventListener('click', handleAnswer);
 buttonChoice3.addEventListener('click', handleAnswer);
