@@ -1,10 +1,14 @@
 // variables
 // time and user score
-var timeEl = document.querySelector("timeLeft");
+var timeEl = document.querySelector("#timeLeft");
 var scoreEl = document.querySelector("#score");
 
+// instruction variable
+var infoEl = document.querySelector("#instructions");
+
+
 // event listener variable
-var startEl = document.querySelector("startQuiz");
+var startEl = document.querySelector("#startQuiz");
 
 // variables for buttons
 var buttonChoice = document.querySelector("#options");
@@ -14,8 +18,9 @@ var buttonChoice2 = document.querySelector("option-2");
 var buttonChoice3 = document.querySelector("option-3");
 var buttonChoice4 = document.querySelector("option-4");
 
-
-var questEl = document.querySelector("questEl")
+// question section
+var questEl = document.querySelector("quest");
+var questGoes = document.querySelector("#goes");
 var questionCount = 0;
 
 // list out question/choices
@@ -80,11 +85,9 @@ function setTime() {
     var timerInterval = setInterval(function () {
         timeLeft--;
         timeEl.textContent = timeLeft;
-
         if (timeLeft === 0) {
             // Calls function to create and append image
             timeEl.textContent = "Time's Up, Game Over";
-
             // Stops execution of action at set interval
             clearInterval(timerInterval);
         }
@@ -94,16 +97,28 @@ function setTime() {
 // Start Quiz using the click feature
 startEl.addEventListener("click", function(event) {
     event.preventDefault();
-    setTime();
 
+    setTime();
+    setQuestion();
+    
 });
 
-// generate a random question
-function randomQuest (){
-
+// generate a question from the statements below
+function setQuestion (){
+    
+    if (id < questions.length)
+    {
+        questionTitle.textContent = questionArr[randomQuestion].question
+        option1.textContent = questionArr[id].answers[0];
+        option1.textContent = questionArr[id].answers[1];
+        option1.textContent = questionArr[id].answers[2];
+        option1.textContent = questionArr[id].answers[3];
+    }
 }
 
-
+//function startGame () {
+  //  questbutton.style.visibility = "visible";
+//}
 
 
 

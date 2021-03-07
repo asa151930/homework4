@@ -38,11 +38,17 @@ ul.options {
 }
 
 /* hides these tags until the click event */
-#Questions,
-#Final-score,
-#Highscores
+#quest-button
 {
-    display: none;
+    visibility: hidden;
+}
+#Highscores 
+{
+    visibility: hidden
+}
+#Finalscores
+{
+    visibility: hidden;
 }
 
 ul.options {
