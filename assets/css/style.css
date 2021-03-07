@@ -5,6 +5,7 @@
     box-sizing: border-box;
     font-family: 'Times New Roman', Times, serif;
 }
+
 /* entire body after header */
 body {
     display: flex;
@@ -12,6 +13,7 @@ body {
     color: white;
     flex-direction: column;
 }
+
 /* covers all code falls under container div */
 container div { 
     position: absolute;
@@ -20,12 +22,19 @@ container div {
     transform: translate(-50%, -50%);
 }
 
+/* covers content in container button */
 container button {
     position: center;
 }
 
+/* main content */
 main {
     flex: 1 0 auto;
+}
+
+
+ul.options {
+    list-style-type: none;
 }
 
 /* hides these tags until the click event */
@@ -34,4 +43,8 @@ main {
 #Highscores
 {
     display: none;
+}
+
+ul.options {
+    list-style-type: none;
 }

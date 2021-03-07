@@ -8,6 +8,8 @@ var buttonChoice1 = document.getElementById("option-1");
 var buttonChoice2 = document.getElementById("option-2");
 var buttonChoice3 = document.getElementById("option-3");
 var buttonChoice4 = document.getElementById("option-4");
+var questionCount = 0;
+
 
 
 // list out question/choices
@@ -117,7 +119,7 @@ var questionArr = [
             C: "Both A and B are correct",
             D: "None of the choices are correct"
         }
-    correctAnswer: "The local element"
+        correctAnswer: "The local element"
     }
 ];
 
