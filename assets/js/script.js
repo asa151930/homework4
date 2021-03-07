@@ -8,12 +8,12 @@ var startEl = document.querySelector("#startQuiz");
 
 // variables for buttons
 var buttonChoice = document.querySelector("#options");
-var questionTitle = document.querySelector('questions-title');
-var buttonChoice1 = document.querySelector("option-1");
-var buttonChoice2 = document.querySelector("option-2");
-var buttonChoice3 = document.querySelector("option-3");
-var buttonChoice4 = document.querySelector("option-4");
-var questionsEl = document.querySelector("#Questions");
+var questionTitle = document.querySelector('#questions-title');
+var buttonChoice1 = document.querySelector("#option-1");
+var buttonChoice2 = document.querySelector("#option-2");
+var buttonChoice3 = document.querySelector("#option-3");
+var buttonChoice4 = document.querySelector("#option-4");
+var questionEl = document.querySelector('#Questions');
 var questionCount = 0;
 
 // list out question/choices
@@ -27,7 +27,7 @@ var questionArr = [
         "3. Chris Beard", 
         "4. Ryan Dahl"
     ],
-    correctAnswer: "2"
+    correctAnswer: "1"
     },
     {
         question: "What is the HTML tag under which one can write the JavaScript code?",
@@ -37,7 +37,7 @@ var questionArr = [
         "3. <script>",
         "4. <js>"
     ],
-    correctAnswer: "3"
+    correctAnswer: "2"
     },
     {
         question: "The function and var are known as: ",
@@ -50,7 +50,7 @@ var questionArr = [
     correctAnswer: "3"
     },
     {
-        question: "9. When interpreter encounters an empty statements, what it will do:",
+        question: "When interpreter encounters an empty statements, what it will do:",
         answers: [
              "1. Shows a warning",
              "2. Prompts to complete the statement",
@@ -60,7 +60,7 @@ var questionArr = [
     correctAnswer: "4"
     },
     {
-        question: "10. Which of the following variables takes precedence over the others if the names are the same?",
+        question: "Which of the following variables takes precedence over the others if the names are the same?",
         answers:[
              "1. Global variable",
              "2. The local element",
@@ -78,9 +78,11 @@ function setTime() {
     var timerInterval = setInterval(function () {
         timeLeft--;
         timeEl.textContent = timeLeft;
+
         if (timeLeft === 0) {
             // Calls function to create and append image
             timeEl.textContent = "Time's Up, Game Over";
+
             // Stops execution of action at set interval
             clearInterval(timerInterval);
         }
@@ -89,42 +91,42 @@ function setTime() {
 
 // Start Quiz using the click feature
 startEl.addEventListener("click", function(event) {
-    
     event.preventDefault();
     setTime();
     randomQuest();
-
+    
 });
 
-//generate a question from the statements below
-function randomQuest (){
-        questionsEl.style.display = 'block';
-        console.log(questionArr[questionCount]);
-        questionTitle.textContent = questionArr[questionCount].question;
-        const buttons = [buttonChoice1, buttonChoice2, buttonChoice3, buttonChoice4];
-        for (var i = 0; i < questionArr[questionCount].answers.length; i++){
-            
-            console.log(questionArr[questionCount].answers[i]);
-            buttons[i].textContent = questionArr[questionCount].answers[i];
-        }
-        
+// generate a random question
+function randomQuest() {
+    questionEl.style.display = 'block';
+    console.log(questionArr[questionCount]);
+    questionTitle.textContent = questionArr[questionCount].question;
+    const buttons = [buttonChoice1, buttonChoice2, buttonChoice3, buttonChoice4];
+    for(var i = 0; i < questionArr[questionCount].answers.length; i++) {
+        console.log(questionArr[questionCount].answers[i]);
+        buttons[i].textContent = questionArr[questionCount].answers[i];
     }
+}
 
-    function handleAnswer (event) {
-        event.preventDefault();
-        console.log(questionArr[questionCount].correctAnswer, event.target.value)
-        if (questionArr[questionCount].correctAnswer === event.target.value) {
-            alert('here')
-        } else {
-            alert('wrong');
-        }
-        questionCount++;
-        randomQuest();
+
+function handleAnswer (event) {
+    event.preventDefault();
+    console.log(questionArr[questionCount].correctAnswer, event.target.value)
+    if (questionArr[questionCount].correctAnswer === event.target.value) {
+        alert('Correct!')
+    } else {
+        alert('Wrong!');
     }
-    buttonChoice1.addEventListener('click', handleAnswer);
-    buttonChoice2.addEventListener('click', handleAnswer);
-    buttonChoice3.addEventListener('click', handleAnswer);
-    buttonChoice4.addEventListener('click', handleAnswer);
+    questionCount++;
+    randomQuest();
+}
+buttonChoice1.addEventListener('click', handleAnswer);
+buttonChoice2.addEventListener('click', handleAnswer);
+buttonChoice3.addEventListener('click', handleAnswer);
+buttonChoice4.addEventListener('click', handleAnswer);
+
+
 
 
 

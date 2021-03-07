@@ -37,20 +37,6 @@ ul.options {
     list-style-type: none;
 }
 
-/* hides these tags until the click event */
-#quest-button
-{
-    visibility: hidden;
-}
-#Highscores 
-{
-    visibility: hidden
-}
-#Finalscores
-{
-    visibility: hidden;
-}
-
 ul.options {
     list-style-type: none;
 }
