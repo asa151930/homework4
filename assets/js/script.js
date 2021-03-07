@@ -1,5 +1,5 @@
-// list out all elements
-// time and 
+// variables
+// time and user score
 var timeEl = document.querySelector("timeLeft");
 var scoreEl = document.querySelector("#score");
 
@@ -17,11 +17,6 @@ var buttonChoice4 = document.querySelector("option-4");
 
 var questEl = document.querySelector("questEl")
 var questionCount = 0;
-var correctAnswer = 0;
-
-
-
-
 
 // list out question/choices
 //Array Questions
@@ -56,7 +51,6 @@ var questionArr = [
         ],
     correctAnswer: "3"
     },
-
     {
         question: "9. When interpreter encounters an empty statements, what it will do:",
         answers: [
@@ -67,7 +61,6 @@ var questionArr = [
         ],
     correctAnswer: "4"
     },
-
     {
         question: "10. Which of the following variables takes precedence over the others if the names are the same?",
         answers:[
@@ -104,6 +97,11 @@ startEl.addEventListener("click", function(event) {
     setTime();
 
 });
+
+// generate a random question
+function randomQuest (){
+
+}
 
 
 
