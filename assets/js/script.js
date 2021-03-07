@@ -3,10 +3,6 @@
 var timeEl = document.querySelector("#timeLeft");
 var scoreEl = document.querySelector("#score");
 
-// instruction variable
-var infoEl = document.querySelector("#instructions");
-
-
 // event listener variable
 var startEl = document.querySelector("#startQuiz");
 
@@ -17,10 +13,7 @@ var buttonChoice1 = document.querySelector("option-1");
 var buttonChoice2 = document.querySelector("option-2");
 var buttonChoice3 = document.querySelector("option-3");
 var buttonChoice4 = document.querySelector("option-4");
-
-// question section
-var questEl = document.querySelector("quest");
-var questGoes = document.querySelector("#goes");
+var questionsEl = document.querySelector("#Questions");
 var questionCount = 0;
 
 // list out question/choices
@@ -96,29 +89,43 @@ function setTime() {
 
 // Start Quiz using the click feature
 startEl.addEventListener("click", function(event) {
-    event.preventDefault();
-
-    setTime();
-    setQuestion();
     
+    event.preventDefault();
+    setTime();
+    randomQuest();
+
 });
 
-// generate a question from the statements below
-function setQuestion (){
-    
-    if (id < questions.length)
-    {
-        questionTitle.textContent = questionArr[randomQuestion].question
-        option1.textContent = questionArr[id].answers[0];
-        option1.textContent = questionArr[id].answers[1];
-        option1.textContent = questionArr[id].answers[2];
-        option1.textContent = questionArr[id].answers[3];
+//generate a question from the statements below
+function randomQuest (){
+        questionsEl.style.display = 'block';
+        console.log(questionArr[questionCount]);
+        questionTitle.textContent = questionArr[questionCount].question;
+        const buttons = [buttonChoice1, buttonChoice2, buttonChoice3, buttonChoice4];
+        for (var i = 0; i < questionArr[questionCount].answers.length; i++){
+            
+            console.log(questionArr[questionCount].answers[i]);
+            buttons[i].textContent = questionArr[questionCount].answers[i];
+        }
+        
     }
-}
 
-//function startGame () {
-  //  questbutton.style.visibility = "visible";
-//}
+    function handleAnswer (event) {
+        event.preventDefault();
+        console.log(questionArr[questionCount].correctAnswer, event.target.value)
+        if (questionArr[questionCount].correctAnswer === event.target.value) {
+            alert('here')
+        } else {
+            alert('wrong');
+        }
+        questionCount++;
+        randomQuest();
+    }
+    buttonChoice1.addEventListener('click', handleAnswer);
+    buttonChoice2.addEventListener('click', handleAnswer);
+    buttonChoice3.addEventListener('click', handleAnswer);
+    buttonChoice4.addEventListener('click', handleAnswer);
+
 
 
 
