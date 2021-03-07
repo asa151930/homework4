@@ -1,6 +1,6 @@
-A Code Quiz over JavaScript
+# A Code Quiz over JavaScript
 
-# Homework-4
+Homework-4
 
 User Story
 <br>
