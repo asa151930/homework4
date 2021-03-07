@@ -1,14 +1,17 @@
 // list out all elements
 
-var timeEl = document.getElementById("time-left");
-var startQuiz = document.getElementById("begin-quiz");
-var buttonChoice = document.getElementById("options");
-var questionTitle = document.getElementById('questions-title');
-var buttonChoice1 = document.getElementById("option-1");
-var buttonChoice2 = document.getElementById("option-2");
-var buttonChoice3 = document.getElementById("option-3");
-var buttonChoice4 = document.getElementById("option-4");
+var timeEl = document.querySelector("timeLeft");
+var startEl = document.querySelector("#startQuiz");
+var buttonChoice = document.querySelector("#options");
+var questionTitle = document.querySelector('questions-title');
+var buttonChoice1 = document.querySelector("option-1");
+var buttonChoice2 = document.querySelector("option-2");
+var buttonChoice3 = document.querySelector("option-3");
+var buttonChoice4 = document.querySelector("option-4");
+var questEl = document.querySelector("questEl")
+
 var questionCount = 0;
+
 
 
 
@@ -134,6 +137,7 @@ function setTime() {
         if (timeLeft === 0) {
             // Calls function to create and append image
             timeEl.textContent = "Time's Up, Game Over";
+
             // Stops execution of action at set interval
             clearInterval(timerInterval);
         }
@@ -141,10 +145,8 @@ function setTime() {
 }
 
 // Start Quiz
-startQuiz.addEventListener("click", function) {
-    event.preventDefault()
-    setTime();
-}
+
+
 
 
 
