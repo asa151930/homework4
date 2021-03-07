@@ -1,16 +1,19 @@
+/* Webpage */
 *{
     margin: 0;
     padding: 0px;
     box-sizing: border-box;
     font-family: 'Times New Roman', Times, serif;
 }
-
+/* entire body after header */
 body {
-background-color: black;
-color: white;
+    display: flex;
+    background-color: black;
+    color: white;
+    flex-direction: column;
 }
-
-container div {
+/* covers all code falls under container div */
+container div { 
     position: absolute;
     top: 50%;
     left: 50%;
@@ -19,4 +22,8 @@ container div {
 
 container button {
     position: center;
+}
+
+main {
+    flex: 1 0 auto;
 }
