@@ -3,6 +3,11 @@
 var timeEl = document.getElementById("time-left");
 var startQuiz = document.getElementById("begin-quiz");
 var buttonChoice = document.getElementById("options");
+var questionTitle = document.getElementById('questions-title');
+var buttonChoice1 = document.getElementById("option-1");
+var buttonChoice2 = document.getElementById("option-2");
+var buttonChoice3 = document.getElementById("option-3");
+var buttonChoice4 = document.getElementById("option-4");
 
 
 // list out question/choices

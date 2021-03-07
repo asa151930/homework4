@@ -69,23 +69,35 @@
             </div>
         </div>
     </div>
-
+    <!--form for final score-->
     <form id="Final-Score">
         <div class="row">
             <div class="col-3">
                 <div class="col-6">
                     <h2> You are done!</h2>
-                    <p>Your final score is <span class="final"></span></p>
+                    <p>Your final score is <span id="score" class="pl-1">0</span></p>
                     <label for="initials"> Enter your initials: </label>
                     <!---form element-->
                     <input type="text" id= "initials" name="initials" />
-                    <button class="btn btn-warning"> Submit </button>
+                    <button id= "submit-score" class="btn btn-warning"> Submit </button>
                 </form>    
                 </div>
                 </div>
             </div>
         </div>
-    </section>
+        <!--form for High Scores-->
+    <form id="Highscores">
+        <div class="row">
+            <div class="col-3">
+                <div class="col-6">
+                    <h2>High Scores</h2>
+                    
+                    <ol id="score-list"></ol>
+                    <button id="Clear Score" class="btn btn-warning">Clear Score</button>
+                </div>
+            </div>
+        </div>
+    </form>
 </main>
 
     <script src="assets/js/script.js"></script>
