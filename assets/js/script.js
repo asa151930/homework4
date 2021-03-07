@@ -139,8 +139,9 @@ function setTime() {
 }
 
 // Start Quiz
-startQuiz.addEventListener() {
-
+startQuiz.addEventListener("click", function) {
+    event.preventDefault()
+    setTime();
 }
 
 

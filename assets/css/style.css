@@ -27,3 +27,11 @@ container button {
 main {
     flex: 1 0 auto;
 }
+
+/* hides these tags until the click event */
+#Questions,
+#Final-score,
+#Highscores
+{
+    display: none;
+}
