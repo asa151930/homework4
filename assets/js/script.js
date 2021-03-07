@@ -119,22 +119,22 @@ var questionArr = [
 // Timer
 function setTime() {
     var timeLeft = 75;
-        // Sets interval in variable
-        var timerInterval = setInterval(function () {
-            timeLeft--;
-            timeEl.textContent = timeLeft;
+    // Sets interval in variable
+    var timerInterval = setInterval(function () {
+        timeLeft--;
+        timeEl.textContent = timeLeft;
 
-            if (timeLeft === 0) {
-                // Calls function to create and append image
-                timeEl.textContent = "Time's Up, Game Over";
-                // Stops execution of action at set interval
-                clearInterval(timerInterval);
-            }
-        }, 1000);
-    }
+        if (timeLeft === 0) {
+            // Calls function to create and append image
+            timeEl.textContent = "Time's Up, Game Over";
+            // Stops execution of action at set interval
+            clearInterval(timerInterval);
+        }
+    }, 1000);
+}
 
 // Start Quiz
-function startQuiz (){
+startQuiz.addEventListener() {
 
 }
 
